@@ -1,0 +1,13 @@
+package com.example.model;
+
+public class Mensagem {
+		private int id;
+		private String mensagem;
+		public Mensagem(int id, String mensagem) {
+			super();
+			this.id = id;
+			this.mensagem = mensagem;
+		}
+		
+		
+}

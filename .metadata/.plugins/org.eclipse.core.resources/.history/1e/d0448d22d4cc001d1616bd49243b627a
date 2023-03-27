@@ -1,0 +1,23 @@
+package com.example.controller;
+
+import java.util.concurrent.atomic.AtomicLong;
+
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.example.model.Mensagem;
+
+@RestController
+@RequestMapping
+public class MensagemController {
+			
+			
+		private static final String mensagemPadrao= "Olá, %s!";
+		private final AtomicLong contador= new AtomicLong();
+		
+			public Mensagem mensagem(@RequestParam(value = "nome",defaultValue = "Mundo")String nome) {
+				return new Mensagem(contador.incrementAndGet(),String.format(mensagemPadrao, nome));
+			}
+			 
+}
